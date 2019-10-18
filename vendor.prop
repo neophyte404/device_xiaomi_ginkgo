@@ -173,6 +173,9 @@ drm.service.enabled=true
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# Fwk detect
+ro.vendor.qti.va_aosp.support=1
+
 # Keystore
 ro.hardware.keystore_desede=true
 
