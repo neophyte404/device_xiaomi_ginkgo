@@ -24,8 +24,8 @@ dalvik.vm.systemuicompilerfilter=speed
 # DPM
 persist.dpm.feature=1
 
-# Fuse storage
-persist.fuse_sdcard=true
+# FUSE
+persist.sys.fuse.passthrough.enable=true
 
 # IMS
 persist.dbg.volte_avail_ovr=1
