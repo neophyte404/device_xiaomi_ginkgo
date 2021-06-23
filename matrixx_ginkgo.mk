@@ -11,6 +11,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/matrixx/config/common_full_phone.mk)
 MATRIXX_MAINTAINER := neophyte
+WITH_GMS := true
+TARGET_SUPPORTS_QUICK_TAP := true
 
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
