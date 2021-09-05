@@ -11,3 +11,6 @@ genfscon sysfs /devices/platform/soc/4a8c000.i2c/i2c-1/1-0028/wakeup            
 genfscon sysfs /devices/virtual/input/input1/wakeup                                                                                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/input/input2/wakeup                                                                                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/wakeup/wakeup                                                                                                             u:object_r:sysfs_wakeup:s0
+
+# Battery saver
+genfscon sysfs /module/battery_saver/parameters/enabled u:object_r:sysfs_battery_saver:s0
