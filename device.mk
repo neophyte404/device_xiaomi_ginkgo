@@ -5,9 +5,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
 # Vendor blobs
 $(call inherit-product, vendor/xiaomi/ginkgo/ginkgo-vendor.mk)
 
@@ -20,6 +17,9 @@ PRODUCT_PACKAGES += \
     GinkgoNoCutoutOverlay \
     NotchBarKiller \
     WillowFrameworkRes
+
+# APEX
+OVERRIDE_TARGET_FLATTEN_APEX := true
 
 # AID/fs configs
 PRODUCT_PACKAGES += \
