@@ -187,6 +187,10 @@ esac
 # Post-setup services
 case "$target" in
     "trinket")
+        rm -f /data/system/storage.xml
+        touch /data/system/storage.xml
+        chattr +i /data/system/storage.xml
+
         setprop vendor.post_boot.parsed 1
 
         # Enable PowerHAL hint processing
