@@ -136,6 +136,7 @@ ro.crypto.volume.options=::v2
 ro.vendor.sf.detect.aod.enable=true
 ro.hwui.render_ahead=20
 debug.sf.predict_hwc_composition_strategy=0
+debug.sf.treat_170m_as_sRGB=1
 vendor.display.comp_mask=0
 vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
 vendor.display.disable_decimation=1
