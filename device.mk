@@ -1,6 +1,7 @@
 #
 # Copyright (C) 2018-2019 The LineageOS Project
 # Copyright (C) 2020 Paranoid Android
+# Copyright (C) 2023 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -324,6 +325,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_willow/android.hardware.nfc.hcef.xml \
     frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_willow/android.hardware.nfc.uicc.xml
 
+# Partitions
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Parts
 PRODUCT_PACKAGES += \
     XiaomiParts
@@ -354,6 +359,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.zram \
     fstab.qcom \
+    fstab.qcom_ramdisk \
     init.class_main.sh \
     init.ginkgo.rc \
     init.qcom.early_boot.sh \
