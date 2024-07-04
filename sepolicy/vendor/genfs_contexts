@@ -14,3 +14,6 @@ genfscon sysfs /devices/virtual/wakeup/wakeup                                   
 
 # Battery saver
 genfscon sysfs /module/battery_saver/parameters/enabled u:object_r:sysfs_battery_saver:s0
+
+# DT2W
+genfscon sysfs /touchpanel u:object_r:sysfs_touchpanel:s0
