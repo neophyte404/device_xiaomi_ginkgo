@@ -15,6 +15,7 @@ ro.vendor.use_data_netmgrd=true
 
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.systemuicompilerfilter=speed
 
 # DPM
 persist.dpm.feature=1
