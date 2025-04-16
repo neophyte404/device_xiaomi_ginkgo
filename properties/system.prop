@@ -4,6 +4,10 @@ vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.chall
 # CNE
 persist.vendor.cne.feature=1
 
+# Display
+persist.lcd.cabc_mode=1
+persist.lcd.hbm_mode=0
+
 # Data
 persist.vendor.data.mode=concurrent
 persist.vendor.ims.dropset_feature=1
