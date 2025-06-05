@@ -9,6 +9,11 @@ DEVICE_PATH := device/xiaomi/ginkgo
 # MiuiCamera
 -include device/xiaomi/miuicamera-ginkgo/BoardConfig.mk
 
+# ART
+WITH_DEXPREOPT := true
+DEX_PREOPT_DEFAULT := generate-vdex-and-image
+WITH_DEXPREOPT_DEBUG_INFO := false
+
 # A/B
 AB_OTA_UPDATER := false
 
