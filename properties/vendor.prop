@@ -210,6 +210,10 @@ persist.vendor.sensors.support_direct_channel=false
 ro.com.android.dataroaming=true
 ro.telephony.default_network=22,22
 
+# ScrollOptimizer
+persist.sys.perf.scroll_opt=true
+persist.sys.perf.scroll_opt.heavy_app=1
+
 # SurfaceFlinger
 debug.sf.use_phase_offsets_as_durations=1
 debug.sf.late.sf.duration=10500000
