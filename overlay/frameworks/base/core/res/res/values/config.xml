@@ -715,4 +715,6 @@
         <item>30</item>
     </integer-array>
 
+    <!-- Media Controls -->
+    <bool name="config_mediaControlsTurbulenceByDefault">false</bool>
 </resources>
