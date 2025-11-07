@@ -160,6 +160,10 @@ drm.service.enabled=true
 # fastbootd
 ro.fastbootd.available=true
 
+# HWUI
+persist.log.tag.HWUI=S
+persist.log.tag.hwcomposer=S
+
 # FS-verity
 ro.apk_verity.mode=2
 
