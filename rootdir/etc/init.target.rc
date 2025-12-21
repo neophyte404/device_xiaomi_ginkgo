@@ -205,6 +205,7 @@ on charger
     setprop sys.usb.configfs 1
     start vendor.power_off_alarm
 
+on property:sys.boot_completed=1
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
    user root
