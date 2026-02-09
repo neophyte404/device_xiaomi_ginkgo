@@ -102,6 +102,10 @@ PRODUCT_PACKAGES += \
     gralloc.qcom \
     hwcomposer.qcom
 
+# Disable RescueParty due to high risk of data loss
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.sys.disable_rescue=true
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
