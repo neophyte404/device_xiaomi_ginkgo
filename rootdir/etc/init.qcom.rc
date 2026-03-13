@@ -27,7 +27,8 @@
 
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
-import /vendor/etc/init/hw/init.device.rc
+import /vendor/etc/init/hw/init.ginkgo.rc
+import /vendor/etc/init/hw/init.fingerprint.rc
 
 on early-init
   # create symlink for vendor mount points

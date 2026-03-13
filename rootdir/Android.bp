@@ -63,3 +63,24 @@ prebuilt_etc {
     src: "etc/ueventd.rc",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "init.ginkgo.rc",
+    src: "etc/init.ginkgo.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.fingerprint.rc",
+    src: "etc/init.fingerprint.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+// fstab
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    vendor: true,
+}

@@ -19,6 +19,8 @@ namespace_imports = [
     'hardware/qcom-caf/sm8150',
     'vendor/qcom/opensource/dataservices',
     'vendor/qcom/opensource/display',
+    'hardware/qcom-caf/wlan',
+    'hardware/xiaomi',
 ]
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
@@ -39,10 +41,29 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libcrypto_shim.so'),
     'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
         .add_line_if_missing('gettid: 1'),
+    'vendor/lib/miwatermark.so': blob_fixup()
+        .add_needed('libpiex_shim.so'),
+    'vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so': blob_fixup()
+        .remove_needed('libhidlbase.so')
+        .replace_needed('libhidltransport.so', 'libhidlbase-v32.so'),
+    'vendor/lib/libalLDC.so': blob_fixup()
+        .clear_symbol_version('AHardwareBuffer_allocate')
+        .clear_symbol_version('AHardwareBuffer_describe')
+        .clear_symbol_version('AHardwareBuffer_lock')
+        .clear_symbol_version('AHardwareBuffer_release')
+        .clear_symbol_version('AHardwareBuffer_unlock'),
+    'vendor/lib/libmmcamera_faceproc.so': blob_fixup()
+        .clear_symbol_version('__aeabi_memcpy')
+        .clear_symbol_version('__aeabi_memset')
+        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
+    'vendor/lib/libVDSuperPhotoAPI.so': blob_fixup()
+        .clear_symbol_version('remote_handle_close')
+        .clear_symbol_version('remote_handle_invoke')
+        .clear_symbol_version('remote_handle_open'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'sm6125-common',
+    'ginkgo',
     'xiaomi',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,

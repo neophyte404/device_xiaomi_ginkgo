@@ -117,6 +117,7 @@ bluetooth.profile.ccp.server.enabled?=true
 bluetooth.profile.vcp.controller.enabled?=true
 
 # Camera
+vendor.camera.remapid=0 1 20 21 22 61
 persist.vendor.camera.expose.aux=1
 persist.vendor.camera.perflock.enable=0
 vendor.camera.not.cts.apk=1
@@ -134,7 +135,6 @@ ro.crypto.volume.metadata.method=dm-default-key
 ro.crypto.volume.options=::v2
 
 # Display
-ro.surface_flinger.use_color_management=true
 ro.vendor.sf.detect.aod.enable=true
 vendor.display.comp_mask=0
 vendor.display.dataspace_saturation_matrix=1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0
@@ -160,15 +160,15 @@ drm.service.enabled=true
 # fastbootd
 ro.fastbootd.available=true
 
+# Fingerprint
+persist.vendor.fingerprint.type=rear
+persist.vendor.fingerprint.detect_interaction=true
+
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
 # Graphics
-debug.egl.hw=0
 debug.force_no_blanking=true
-debug.mdpcomp.logs=0
-debug.sf.hw=0
-debug.sf.disable_client_composition_cache=1
 persist.sys.sf.color_mode=0
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=2
@@ -203,6 +203,15 @@ ro.com.android.dataroaming=true
 ro.telephony.default_network=22,22
 
 # SurfaceFlinger
+debug.sf.use_phase_offsets_as_durations=1
+debug.sf.late.sf.duration=10500000
+debug.sf.late.app.duration=20500000
+debug.sf.early.sf.duration=21000000
+debug.sf.early.app.duration=16500000
+debug.sf.earlyGl.sf.duration=13500000
+debug.sf.earlyGl.app.duration=21000000
+debug.sf.enable_transaction_tracing=false
+ro.surface_flinger.use_color_management=true
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.max_virtual_display_dimension=4096
