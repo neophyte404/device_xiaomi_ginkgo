@@ -21,3 +21,6 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Keys
+$(call inherit-product, vendor/private/keys/keys.mk)
