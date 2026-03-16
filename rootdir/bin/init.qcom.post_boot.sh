@@ -2987,6 +2987,11 @@ esac
 case "$target" in
     "trinket")
 
+        # Set the default IRQ affinity to the primary cluster. When a
+        # CPU is isolated/hotplugged, the IRQ affinity is adjusted
+        # to one of the CPU from the default IRQ affinity mask.
+        echo f > /proc/irq/default_smp_affinity
+
         if [ -f /sys/devices/soc0/soc_id ]; then
                 soc_id=`cat /sys/devices/soc0/soc_id`
         else
@@ -3011,9 +3016,11 @@ case "$target" in
             echo 100 > /proc/sys/kernel/sched_group_upmigrate
 
             # cpuset settings
-            echo 0-3 > /dev/cpuset/background/cpus
-            echo 0-3 > /dev/cpuset/system-background/cpus
-
+            echo 0-2     > /dev/cpuset/background/cpus
+            echo 0-3     > /dev/cpuset/system-background/cpus
+            echo 4-7     > /dev/cpuset/foreground/boost/cpus
+            echo 0-2,4-7 > /dev/cpuset/foreground/cpus
+            echo 0-7     > /dev/cpuset/top-app/cpus
 
             # configure governor settings for little cluster
             echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
@@ -3029,7 +3036,12 @@ case "$target" in
             echo 1401600 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq
             echo 1056000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 
-	    echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
+            echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
+            # enable input boost
+            echo "0:1401600" > /sys/module/cpu_boost/parameters/input_boost_freq
+            echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
+            echo "0:1612800 1:0 2:0 3:0 4:1747200 5:0 6:0 7:0" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
+            echo 400 > /sys/module/cpu_boost/parameters/powerkey_input_boost_ms
 
             # sched_load_boost as -6 is equivalent to target load as 85. It is per cpu tunable.
             echo -6 >  /sys/devices/system/cpu/cpu0/sched_load_boost
