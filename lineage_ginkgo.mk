@@ -26,6 +26,10 @@ $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 # Inherit some common LineageOS stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# RisingOS
+RISING_CHIPSET := "Snapdragon™665"
+RISING_MAINTAINER := "Neophyte"
+
 # Device identifier
 PRODUCT_NAME := lineage_ginkgo
 PRODUCT_DEVICE := ginkgo
