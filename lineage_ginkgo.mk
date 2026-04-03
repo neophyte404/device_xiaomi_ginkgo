@@ -30,6 +30,10 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
 
+# RisingOS
+RISING_CHIPSET := "Snapdragon™665"
+RISING_MAINTAINER := "Neophyte"
+
 # Device identifier
 PRODUCT_NAME := lineage_ginkgo
 PRODUCT_DEVICE := ginkgo
