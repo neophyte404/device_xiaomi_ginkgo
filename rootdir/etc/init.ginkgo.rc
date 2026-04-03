@@ -104,11 +104,6 @@ on property:vendor.post_boot.parsed=1
     write /dev/stune/top-app/schedtune.boost 1
     write /dev/stune/top-app/schedtune.prefer_idle 1
 
-    # Setup scheduler tunables
-    write /proc/sys/kernel/sched_upmigrate 85
-    write /proc/sys/kernel/sched_downmigrate 75
-    write /proc/sys/kernel/sched_child_runs_first 1
-
     # Report max frequency to unity tasks
     write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so"
     write /proc/sys/kernel/sched_lib_mask_force 255
