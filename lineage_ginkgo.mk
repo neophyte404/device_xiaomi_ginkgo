@@ -26,10 +26,6 @@ $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 # Inherit some common LineageOS stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Maintainer name
-DEVICE_MAINTAINER := neophyte
-DEVICE_MAINTAINER_LINK := https://t.me/k4ngcaribug
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2340
 TARGET_SCREEN_WIDTH := 1080
