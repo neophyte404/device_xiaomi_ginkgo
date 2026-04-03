@@ -42,5 +42,5 @@ PRODUCT_MODEL := Redmi Note 8/8T
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Signing
--include vendor/lineage-priv/keys/keys.mk
+# Keys
+$(call inherit-product, vendor/private/keys/keys.mk)
