@@ -5,4 +5,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/custom_ginkgo.mk
+    $(LOCAL_DIR)/lineage_ginkgo.mk \
+    $(LOCAL_DIR)/custom_ginkgo.mk \
+    $(LOCAL_DIR)/matrixx_ginkgo.mk
