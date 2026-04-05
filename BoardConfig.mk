@@ -6,6 +6,9 @@
 
 DEVICE_PATH := device/xiaomi/ginkgo
 
+# MiuiCamera
+-include device/xiaomi/miuicamera-ginkgo/BoardConfig.mk
+
 # A/B
 AB_OTA_UPDATER := false
 
