@@ -334,6 +334,7 @@ PRODUCT_ODM_PROPERTIES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    fstab.zram \
     fstab.qcom \
     fstab.qcom_ramdisk \
     init.class_main.sh \
