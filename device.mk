@@ -331,6 +331,7 @@ PRODUCT_ODM_PROPERTIES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    fstab.zram \
     fstab.qcom \
     init.class_main.sh \
     init.ginkgo.rc \
