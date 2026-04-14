@@ -14,6 +14,11 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
+# Gapps
+WITH_GMS := true
+TARGET_USES_PICO_GAPPS := true
+
+# Device identifier
 PRODUCT_NAME := lineage_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_MANUFACTURER := Xiaomi
