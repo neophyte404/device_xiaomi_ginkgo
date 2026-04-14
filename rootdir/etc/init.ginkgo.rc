@@ -83,7 +83,7 @@ on property:sys.boot_completed=1
     write /dev/stune/schedtune.boost 0
 
     # Enable ZRAM on boot_complete
-    swapon_all /vendor/etc/fstab.qcom
+    swapon_all /vendor/etc/fstab.zram
 
 on property:vendor.post_boot.parsed=1
     # Setup cpusets
