@@ -162,8 +162,7 @@ TARGET_BOARD_PLATFORM := trinket
 TRINKET := trinket
 
 # Power
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
-TARGET_USES_INTERACTION_BOOST := true
+BOARD_POWER_CUSTOM_BOARD_LIB := libpower_ginkgo
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
