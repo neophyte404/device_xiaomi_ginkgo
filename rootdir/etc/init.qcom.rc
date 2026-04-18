@@ -228,9 +228,6 @@ on boot
     # Power supply
     chmod 0660 /sys/class/power_supply/battery/input_suspend
 
-    # Disable surfaceflinger prime_shader_cache
-    setprop service.sf.prime_shader_cache 0
-
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
@@ -478,8 +475,6 @@ on property:sys.boot_completed=1
     chown media audio /sys/kernel/wcd_cpe0/fw_name
     #Reinit lmkd to reconfigure lmkd properties
     setprop lmkd.reinit 1
-    # Enable surfaceflinger prime_shader_cache
-    setprop service.sf.prime_shader_cache 1
 
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
