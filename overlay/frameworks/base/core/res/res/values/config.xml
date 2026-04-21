@@ -673,4 +673,85 @@
 
     <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
     <bool name="config_cleanupUnusedFingerprints">false</bool>
+    
+    <!-- The bounding path of the cutout region of the main built-in display.
+         Must either be empty if there is no cutout region, or a string that is parsable by
+         {@link android.util.PathParser}.
+         The path is assumed to be specified in display coordinates with pixel units and in
+         the display's native orientation, with the origin of the coordinate system at the
+         center top of the display.
+         To facilitate writing device-independent emulation overlays, the marker `@dp` can be
+         appended after the path string to interpret coordinates in dp instead of px units.
+         Note that a physical cutout should be configured in pixels for the best results.
+         Example for a 10px x 10px square top-center cutout:
+                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z</string>
+         Example for a 10dp x 10dp square top-center cutout:
+                <string ...>M -5,0 L -5,10 L 5,10 L 5,0 Z @dp</string>
+         @see https://www.w3.org/TR/SVG/paths.html#PathData
+         -->
+    <string translatable="false" name="config_mainBuiltInDisplayCutout">
+        M -135 0
+        C -100 0 -81 4 -59 45
+        C -48 70 -23 80 0 80
+        C 23 80 48 70 59 45
+        C 81 4 100 0 135 0
+        L -130 0
+        Z
+    </string>
+
+    <!-- Like config_mainBuiltInDisplayCutout, but this path is used to report the
+         one single bounding rect per device edge to the app via
+         {@link DisplayCutout#getBoundingRect}. Note that this path should try to match the visual
+         appearance of the cutout as much as possible, and may be smaller than
+         config_mainBuiltInDisplayCutout
+         -->
+    <string translatable="false" name="config_mainBuiltInDisplayCutoutRectApproximation">
+        M 74 80
+        C 35.0642426 79.9994271 10.3980334 79.9993316 0.00137259186 79.999713
+        C -10.3961724 80.0000955 -35.0632966 80.000191 -74 80
+        L -74 0
+        L 74 0
+        L 74 80
+        Z
+    </string>
+
+    <!-- Whether the display cutout region of the main built-in display should be forced to
+         black in software (to avoid aliasing or emulate a cutout that is not physically existent).
+     -->
+    <bool name="config_fillMainBuiltInDisplayCutout">true</bool>
+
+    <!-- Height of the status bar -->
+    <dimen name="status_bar_height_portrait">80.0px</dimen>
+
+    <!-- Height of the status bar in landscape -->
+    <dimen name="status_bar_height_landscape">28.0dp</dimen>
+
+    <!-- Minimum screen brightness setting allowed by the power manager.
+         The user is forbidden from setting the brightness below this level. -->
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
+
+    <!-- Smart charging -->
+    <string name="config_SmartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
+    <string name="config_SmartChargingSuspendValue" translatable="false">1</string>
+    <string name="config_SmartChargingResumeValue" translatable="false">0</string>
+    
+    <!-- Gestures' key codes. If the gesture is not supported set it to 0. -->
+    <integer name="config_doubleTapKeyCode">750</integer>
+
+    <!-- Default settings for gestures
+         0 - Disabled
+         1 - Wake device
+         2 - Toggle flashlight
+         3 - Toggle airplane mode
+         4 - Play/Pause music
+         5 - Next music
+         6 - Previous music
+         7 - Open camera
+         8 - Open dialer
+    -->
+    <integer name="config_doubleTapDefault">1</integer>
+
+    <!-- Whether to intercept inputs on screen off -->
+    <bool name="config_enableKeyHandler">true</bool>
+    
 </resources>
