@@ -144,6 +144,9 @@ ro.telephony.iwlan_operation_mode=legacy
 ro.vendor.use_data_netmgrd=true
 
 # Display
+debug.hwui.renderer=skiagl
+debug.hwui.skia_tracing_enabled=false
+debug.hwui.skia_use_perfetto_track_events=false
 debug.egl.hw=0
 debug.mdpcomp.logs=0
 debug.sf.disable_backpressure=1
