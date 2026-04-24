@@ -19,7 +19,7 @@
     android:title="@string/kcal_settings_title">
 
     <com.android.settingslib.widget.MainSwitchPreference
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:key="kcal_enable"
         android:title="@string/kcal_enable" />
 
@@ -40,21 +40,21 @@
 
         <SeekBarPreference
             android:key="red_slider"
-            android:defaultValue="256"
+            android:defaultValue="230"
             android:dependency="kcal_enable"
             android:max="256"
             android:title="@string/red_slider_title" />
 
         <SeekBarPreference
             android:key="green_slider"
-            android:defaultValue="256"
+            android:defaultValue="230"
             android:dependency="kcal_enable"
             android:max="256"
             android:title="@string/green_slider_title" />
 
         <SeekBarPreference
             android:key="blue_slider"
-            android:defaultValue="256"
+            android:defaultValue="244"
             android:dependency="kcal_enable"
             android:max="256"
             android:title="@string/blue_slider_title" />
@@ -67,14 +67,14 @@
 
         <SeekBarPreference
             android:key="saturation_slider"
-            android:defaultValue="255"
+            android:defaultValue="265"
             android:dependency="kcal_enable"
             android:max="383"
             android:title="@string/saturation_slider_title" />
 
         <SeekBarPreference
             android:key="contrast_slider"
-            android:defaultValue="255"
+            android:defaultValue="258"
             android:dependency="kcal_enable"
             android:max="383"
             android:title="@string/contrast_slider_title" />
