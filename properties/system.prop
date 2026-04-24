@@ -1,3 +1,8 @@
+# Adaptive Suspend
+suspend.short_suspend_threshold_millis=2000
+suspend.short_suspend_backoff_enabled=true
+suspend.max_sleep_time_millis=40000
+
 # Bluetooth
 persist.bluetooth.bqr.event_mask=14
 persist.bluetooth.bqr.min_interval_ms=500
@@ -19,10 +24,9 @@ persist.sys.camera.fallback_id_2=20
 # Charger
 ro.charger.enable_suspend=true
 
-# CNE/DPM
-persist.vendor.cne.feature=1
-persist.vendor.dpm.feature=11
-persist.vendor.dpmhalservice.enable=1
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+dalvik.vm.systemuicompilerfilter=speed
 
 # Display
 persist.lcd.cabc_mode=1
@@ -39,11 +43,6 @@ persist.vendor.ims.disableADBLogs=1
 persist.vendor.ims.disableDebugLogs=1
 persist.vendor.ims.disableIMSLogs=1
 persist.vendor.ims.disableQXDMLogs=1
-
-# LMK
-ro.lmk.filecache_min_kb=153600
-ro.lmk.kill_timeout_ms=50
-ro.lmk.stall_limit_critical=40
 
 # Media
 debug.stagefright.ccodec=1
