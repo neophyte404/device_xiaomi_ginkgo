@@ -12,11 +12,6 @@ $(call inherit-product, vendor/miuicamera/common/common-vendor.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
-# ART
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
-PRODUCT_ALWAYS_PREOPT_EXTRACTED_APK := true
-
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
